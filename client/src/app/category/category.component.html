@@ -1,0 +1,30 @@
+<div id="wrapper">
+  <app-sidebar></app-sidebar>
+  <div class="col-md-10" >
+      <!-- /* background-image: url("../../assets/img/bg1.jpeg"); */ -->
+      <br><br><br><br>
+        <!-- <div class="col-md-10" style="padding-left:170px">					 -->
+              <form name="admin" method="post" onsubmit="return(f1());">
+                  <h1 class="page-header"style=" font-family:Times New Roman;font-size:70px;">View User</h1>				
+								
+                  <br>
+
+<table class="table table-bordered">
+  <tr>
+    
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Edit</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let users of userservice.userdetails">
+    <td>{{users.fname}}</td>
+    <td>{{users.lname}}</td>
+    <td>{{users.email}}</td>
+    
+
+  </tr>
+
+
+  </table>

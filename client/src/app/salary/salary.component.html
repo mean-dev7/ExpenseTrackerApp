@@ -1,0 +1,31 @@
+<div id="wrapper">
+  <app-sidebar></app-sidebar>
+  <div class="col-md-10 " >
+      <!-- /* background-image: url("../../assets/img/bg1.jpeg"); */ -->
+      <br><br><br><br>
+        <!-- <div class="col-md-10" style="padding-left:170px">					 -->
+              <form #addsalary="ngForm" (ngSubmit)="salarybtn(addsalary)">
+                  <h1 class="page-header"style=" font-family:Times New Roman;font-size:70px;">Add Salary</h1>
+                
+                <!-- <div class="form-group ab" >
+                  <label class="title">Expense Name:</label>
+                  <input type="text" name="aname" required class="form-control textfield">
+                </div> -->
+                <div class="form-group" >
+                  <label class="title">Amount:</label>
+                  <input type="text" name="amount" [(ngModel)]="salary.newsalary.amount" #amount="ngModel" required class="form-control textfield">
+                </div>
+                <!-- <div class="form-group" >
+                  <label class="title">Date</label>
+                  <input type="email" name="aemail"required class="form-control textfield">
+                </div> -->
+                <input type="submit" name="sub" class="btn btn-primary">
+              </form>
+              <div *ngIf="showsuccessmsg">
+                Add Expense Successfully
+              </div>
+              <div *ngIf="servererrormessage">
+                {{servererrormessage}}
+              </div>
+            </div>
+</div>
