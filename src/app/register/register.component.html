@@ -1,0 +1,124 @@
+
+<body class="bg-dark">
+
+  <div class="abc">
+    <div class="container">
+      <div class="card card-register mx-auto mt-5">
+        <div class="card-header">Register an Account</div>
+        <div class="card-body">
+          <form name="form" (ngSubmit)="signUpForm.form.valid && onSubmit(signUpForm)" #signUpForm="ngForm" [mustMatch]="['pswd', 'cpswd']" novalidate>
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-label-group">
+                    <input type="text" id="firstName" class="form-control" placeholder="First name" name="fname" [(ngModel)]="userservice.newuser.fname" #fname="ngModel"  autofocus="autofocus"  [ngClass]="{ 'is-invalid': signUpForm.submitted && fname.invalid }" required>
+                    <label for="firstName">First name</label>
+                    <div *ngIf="signUpForm.submitted && fname.invalid" class="invalid-feedback">
+                            <div *ngIf="fname.errors.required">First Name is required</div>
+                        </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-label-group">
+                    <input type="text" id="lastName" class="form-control" placeholder="Last name" name="lname" [(ngModel)]="userservice.newuser.lname" #lname="ngModel"  [ngClass]="{ 'is-invalid': signUpForm.submitted && lname.invalid }" required>
+                    <label for="lastName">Last name</label>
+                    <div *ngIf="signUpForm.submitted && lname.invalid" class="invalid-feedback">
+                      <div *ngIf="lname.errors.required">First Name is required</div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" [(ngModel)]="userservice.newuser.email" #email="ngModel"  [ngClass]="{ 'is-invalid': signUpForm.submitted && email.invalid }" required>
+                <label for="inputEmail">Email address</label>
+                <div *ngIf="signUpForm.submitted && email.invalid" class="invalid-feedback">
+                  <div *ngIf="email.errors.required">First Name is required</div>
+              </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-label-group">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="pswd" [(ngModel)]="userservice.newuser.pswd" #pswd="ngModel"  [ngClass]="{ 'is-invalid': signUpForm.submitted && pswd.invalid }" required>
+                    <label for="inputPassword">Password</label>
+                    <div *ngIf="signUpForm.submitted && pswd.invalid" class="invalid-feedback">
+                      <div *ngIf="pswd.errors.required">First Name is required</div>
+                  </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-label-group">
+                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" name="cpswd"  #cpswd="ngModel" [(ngModel)]="userservice.newuser.cpswd" [ngClass]="{ 'is-invalid': signUpForm.submitted && cpswd.invalid }" required>
+                    <label for="confirmPassword">Confirm password</label>
+                    <div *ngIf="signUpForm.submitted && cpswd.invalid" class="invalid-feedback">
+                      <div *ngIf="cpswd.errors.required">Confirm Password is required</div>
+                      <div *ngIf="cpswd.errors.mustMatch">Passwords must match</div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <input type="submit" class="btn btn-primary btn-block" value="Register">
+          </form>
+          <div *ngIf="showsuccessmsg">
+            Register succesfully
+          
+          </div>
+          
+          <div *ngIf="servererrormessage">
+              {{servererrormessage}}
+           </div>
+          <div class="text-center">
+            <a class="d-block small mt-3" routerLink='/'>Login Page</a>
+            <a class="d-block small" routerLink="forgot">Forgot Password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <!-- <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)">
+      Enter name: <input type="text" name="fname" [(ngModel)]="userservice.newuser.fname" #name="ngModel">
+      <br><br>
+      Enter lname: <input type="text" name="lname" [(ngModel)]="userservice.newuser.lname" #lname="ngModel">
+    <br>
+      Enter email:<input type="text" name="email" [(ngModel)]="userservice.newuser.email" #email="ngModel">
+      <br><br>
+      Enter password:<input type="text" name="pswd" [(ngModel)]="userservice.newuser.pswd" #pswd="ngModel">
+      <br><br>
+      <input type="submit" name="submit">
+      
+      </form>
+      
+      <div *ngIf="showsuccessmsg">
+        Register succesfully
+      
+      </div>
+      
+      <div *ngIf="servererrormessage">
+          {{servererrormessage}}
+       </div> -->
+  <!-- <form>
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>confirmPassword</label>
+      <input type="text" class="form-control">
+    </div>
+  </form> -->

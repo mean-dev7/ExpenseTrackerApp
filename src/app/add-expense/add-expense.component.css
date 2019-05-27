@@ -1,0 +1,15 @@
+.abcd{
+    background-color: aquamarine;
+    height: 500px;
+};
+.bca{
+    background-color: black;
+    height: 1000px;
+};
+.cba{
+    background-color: brown;
+    height: 100px;
+};
+.img{
+    background-image: url("../../assets/img/bg1.jpeg")
+}

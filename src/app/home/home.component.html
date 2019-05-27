@@ -1,0 +1,27 @@
+<div id="wrapper">
+<!-- <app-header></app-header> -->
+<app-sidebar></app-sidebar>
+<div class="col-md-10" >
+<table class="table table-bordered">
+    <tr>
+      
+      <th>Expense Name</th>
+      <th>Month</th>
+      <th>Amount</th>
+    
+    </tr>
+    <tr *ngFor="let expense of expenseservice.expensedetails">
+      <td>{{expense.name}}</td>
+      <td>{{expense.month}}</td>
+      <td>{{expense.amount}}</td>
+      
+  
+    </tr>
+  
+  
+    </table>
+    <div *ngIf="chart">
+        <canvas id="canvas">{{ chart }}</canvas>
+      </div>
+      
+</div>
