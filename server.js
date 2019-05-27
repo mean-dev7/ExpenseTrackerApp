@@ -1,4 +1,4 @@
-require('.backend/model/db');
+require('./backend/model/db');
 require('./backend/config/passportConfig');
 const cors=require('cors');
 
@@ -33,4 +33,4 @@ app.use(bodyParser.json());
 });
 
  app.use(passport.initialize());
-app.listen(8080,()=>{console.log("server is running at 3000")});
+app.listen(8080,()=>{console.log("server is running at 8080")});
